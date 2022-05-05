@@ -1,0 +1,64 @@
+{
+  "name": "vue3-koa2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon --exec babel-node app.js",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "model": "sequelize-auto -o './server/schema' -d demo -h localhost -u root -p 3306 -x 123456 -e mysql"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "core-js": "^3.6.5",
+    "element-plus": "^2.1.11",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-json": "^2.0.2",
+    "koa-jwt": "^4.0.3",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.16",
+    "sequelize": "^6.19.0",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.14",
+    "vuex": "^4.0.2",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-eslint": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0",
+    "unplugin-auto-import": "^0.7.1",
+    "unplugin-vue-components": "^0.19.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
