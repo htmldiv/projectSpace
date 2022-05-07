@@ -1,0 +1,14 @@
+/*
+ * @Description: app actions
+ * @Author: wander
+ * @Date: 2022-05-05 18:11:21
+ * @LastEditors: wander
+ * @LastEditTime: 2022-05-05 18:14:17
+ */
+export const AppActionTypes = {
+  ACTION_TOGGLE_SIDEBAR : 'ACTION_TOGGLE_SIDEBAR',
+  ACTION_CLOSE_SIDEBAR : 'ACTION_CLOSE_SIDEBAR',
+  ACTION_TOGGLE_DEVICE : 'ACTION_TOGGLE_DEVICE',
+  ACTION_SET_LANGUAGE : 'ACTION_SET_LANGUAGE',
+  ACTION_SET_SIZE : 'ACTION_SET_SIZE',
+}

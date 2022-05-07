@@ -13,7 +13,9 @@
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "core-js": "^3.6.5",
+    "dayjs": "^1.11.1",
     "element-plus": "^2.1.11",
+    "js-cookie": "^3.0.1",
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",
@@ -22,11 +24,13 @@
     "koa-static": "^5.0.0",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.16",
+    "normalize.css": "^8.0.1",
     "sequelize": "^6.19.0",
     "vue": "^3.0.0",
+    "vue-i18n": "^9.1.10",
+    "vue-particles": "^1.0.9",
     "vue-router": "^4.0.14",
-    "vuex": "^4.0.2",
-    "webpack-node-externals": "^3.0.0"
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
@@ -39,8 +43,14 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
+    "sass": "^1.51.0",
+    "sass-loader": "10.0.2",
+    "style-loader": "^3.3.1",
+    "style-resources-loader": "^1.5.0",
     "unplugin-auto-import": "^0.7.1",
-    "unplugin-vue-components": "^0.19.3"
+    "unplugin-vue-components": "^0.19.3",
+    "vue-cli-plugin-style-resources-loader": "^0.1.5",
+    "webpackbar": "^5.0.2"
   },
   "eslintConfig": {
     "root": true,

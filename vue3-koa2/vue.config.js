@@ -1,18 +1,56 @@
-// import path from 'path'
-// import AutoImport from 'unplugin-auto-import/webpack'
-// import Components from 'unplugin-vue-components/webpack'
-// import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-// import nodeExternals from 'webpack-node-externals'
-
+/*
+ * @Description: 配置文件
+ * @Author: wander
+ * @Date: 2022-05-05 11:14:05
+ * @LastEditors: wander
+ * @LastEditTime: 2022-05-05 16:15:53
+ */
+const { resolve } = require('path')
+const path = require('path')
+const WebpackBar = require('webpackbar');
 const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
-// const nodeExternals = require('webpack-node-externals')
+const dayjs = require('dayjs')
+const time = dayjs().format('YYYY-M-D HH:mm:ss')
+process.env.VUE_APP_UPDATE_TIME = time
 
 
 
 module.exports = {
+  publicPath: '/',
+  outputDir: 'dist',
+  assetsDir: 'static',
+  lintOnSave: true,
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'scss',
+      patterns: [
+        path.resolve(__dirname, 'src/styles/_variables.scss'),
+        path.resolve(__dirname, 'src/styles/_mixins.scss'),
+      ]
+    }
+  },
   configureWebpack: {
+    // 设置别名
+    resolve:{
+      alias:{
+        '@':resolve('src'),
+        '*':resolve(''),
+        'Assets':resolve('src/assets')
+      }
+    },
+    module:{
+      rules: [
+        {
+          test: /\.(json5?|ya?ml)$/, // target json, json5, yaml and yml files
+          loader: '@intlify/vue-i18n-loader',
+          include: [ // Use `Rule.include` to specify the files of locale messages to be pre-compiled
+            path.resolve(__dirname, 'src/lang')
+          ]
+        },
+      ],
+    },
     plugins: [
       AutoImport({
         resolvers: [ElementPlusResolver()],
@@ -20,13 +58,10 @@ module.exports = {
       Components({
         resolvers: [ElementPlusResolver()],
       }),
+      new WebpackBar({
+        name: 'vue3-koa2',
+      })
     ],
-    externals: [
-      // nodeExternals(),
-      // nodeExternals({
-      //   modulesDir: path.resolve(__dirname, 'node_modules')
-      // })
-    ]
   },
   devServer:{
     host: 'localhost',
